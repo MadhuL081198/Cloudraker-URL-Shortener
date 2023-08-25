@@ -8,6 +8,7 @@ import ShortLinksTable from './components/ShortLinksTable';
 const App = () => {
   const [shortLinks, setShortLinks] = useState([]);
 
+  //Function to generate the short URL's using 3rd party service Shorten Code
   const fetchShortenedURL = async (originalUrl) => {
       try{
         const fetchUrl = `https://api.shrtco.de/v2/shorten?url=${originalUrl}`
@@ -19,11 +20,10 @@ const App = () => {
       }
     }
 
+  //Function to handle the onSubmit event of the form
   const handleShorten = (originalUrl) => {
     fetchShortenedURL(originalUrl)
   };
-
-
 
   return (
     <div className="max-w-md mx-auto mt-8 p-4">

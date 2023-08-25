@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 const ShortenForm = ({ onShorten }) => {
   const [originalUrl, setOriginalUrl] = useState('');
 
+  //Function to handle onSubmit event of the form
   const handleShorten = () => {
     onShorten(originalUrl);
     setOriginalUrl('');
   };
 
+  //Function to update the user given long URL
   const updateOriginalURL = (e) => {
     setOriginalUrl(e.target.value);
   }

@@ -1,8 +1,6 @@
 import React from 'react';
 
 const ShortLinksTable = ({ shortLinks }) => {
-  console.log('Rendering Table')
-  console.log(shortLinks);
   return (
     <div className="mt-4">
       <h2 className="text-lg font-semibold">Shortened URLs</h2>

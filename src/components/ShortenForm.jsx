@@ -4,7 +4,6 @@ const ShortenForm = ({ onShorten }) => {
   const [originalUrl, setOriginalUrl] = useState('');
 
   const handleShorten = () => {
-    console.log("Original URL:",originalUrl);
     onShorten(originalUrl);
     setOriginalUrl('');
   };

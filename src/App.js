@@ -10,9 +10,9 @@ const App = () => {
 
   const fetchShortenedURL = async (originalUrl) => {
       try{
-        const response = await axios(`https://api.shrtco.de/v2/shorten?url=${originalUrl}`);
+        const fetchUrl = `https://api.shrtco.de/v2/shorten?url=${originalUrl}`
+        const response = await axios(fetchUrl);
         const shortUrl = response.data.result.full_short_link;
-        console.log('Shortened URL', shortUrl)
         setShortLinks([...shortLinks,{originalUrl,shortUrl}]);
       }catch (e){
         console.log(e);
@@ -20,8 +20,6 @@ const App = () => {
     }
 
   const handleShorten = (originalUrl) => {
-    console.log("URL Shortened")
-    console.log("OURL Received:",originalUrl)
     fetchShortenedURL(originalUrl)
   };
 
